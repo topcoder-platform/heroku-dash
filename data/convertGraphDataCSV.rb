@@ -34,11 +34,11 @@ end
   user = ""
   f = open(fileName, 'w+')
   f.write("{\n");
-  f.write(%q["baseline-metric": 50,]);
+  f.write(%q["baseline-metric": 50.3971,]);
   f.write("\n");
   f.write(%q["baseline-metric2": 0,]);
   f.write("\n");
-  f.write(%q["success-metric": 70,]);
+  f.write(%q["success-metric": 0,]);
   f.write("\n");
   f.write(%q["marathon_tester_1": 0,]);
   f.write("\n");
