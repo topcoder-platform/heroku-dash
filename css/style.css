@@ -1,0 +1,542 @@
+/* Common HTML Elements ------------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  background: #fff;
+  color: #333333;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+}
+a {
+  color: #000000;
+}
+a:hover {
+  color: #333333;
+}
+:focus,
+:active {
+  box-shadow: none;
+  outline: none;
+}
+::-webkit-input-placeholder {
+  color: #8f8f8f;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+
+  color: #8f8f8f;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+
+  color: #8f8f8f;
+}
+:-ms-input-placeholder {
+  color: #8f8f8f;
+}
+/* Header ------------------------------------------------------------------ */
+header {
+  margin-bottom: 50px;
+  /* Logo Brands */
+
+}
+header h1 {
+  font-size: 50px;
+  font-weight: 300;
+  text-align: center;
+}
+header nav {
+  display: block;
+  margin: 15px auto;
+  width: 290px;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+header nav ul li {
+  display: inline;
+  float: left;
+  margin-left: 4px;
+  width: auto;
+}
+header nav ul li a {
+  border-top: 3px solid #c4c4c4;
+  color: #adadad;
+  display: block;
+  font-size: 21px;
+  height: 43px;
+  line-height: 43px;
+  padding: 0 12px 0 42px;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+  border-color: #67aed6;
+  color: #009dce;
+  text-decoration: none;
+}
+header nav ul li a.results {
+  background: url(../i/icon-results.png) 13px 50% no-repeat;
+}
+header nav ul li a.geography {
+  background: url(../i/icon-geography.png) 13px 50% no-repeat;
+}
+header .brands {
+  margin-top: 60px;
+}
+header .brands img {
+  margin-bottom: 20px;
+}
+/* Content ----------------------------------------------------------------- */
+main {
+  /* Dropdown Filters */
+
+  /* Graph */
+
+  /* Contest Options */
+
+  /* Contest Timeline */
+
+  /* Contest Details */
+
+  /* Challenge Activity */
+
+  /* Geography */
+
+}
+main .filters {
+  margin-bottom: 40px;
+}
+main .filters .btn-group {
+  width: 100%;
+}
+main .filters .btn-group .btn {
+  border-color: #c1c1c1;
+  font-size: 15px;
+  height: 38px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  padding-right: 20px;
+  text-align: left;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+main .filters .btn-group .btn .glyphicon {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+}
+main .filters .btn-group .dropdown-menu {
+  font-size: 17px;
+  max-height: 300px;
+  overflow: auto;
+  width: 100%;
+}
+main .filters .btn-group .dropdown-menu a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .filters .btn-group .dropdown-menu a.selected {
+  background: url(../i/icon-check.png) 95% 50% no-repeat;
+}
+main .filters .theoretical {
+  color: #ff6529;
+}
+main .filters .success {
+   color: #64ad31;
+}
+main .filters .baseline {
+  color: #57574f;
+}
+main .graph {
+  margin-bottom: 40px;
+}
+main #the-graph {
+  height: 400px;
+}
+main .tooltip-header {
+  clear: both;
+  height: 100%;
+  overflow: hidden;
+}
+main .tooltip-header .tooltip-img {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: inline;
+  float: left;
+  height: auto;
+  width: 33px;
+}
+main .tooltip-header h5 {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+}
+main .tooltip-body {
+  clear: both;
+  margin: 3px 0 0 43px;
+}
+main .contest-options {
+  margin-bottom: 40px;
+}
+main .contest-options .ui-replace {
+  background: url(../i/icon-radio.png) no-repeat;
+  color: #aaa;
+  height: 25px;
+  line-height: 25px;
+  font-size: 13px;
+  font-weight: normal;
+  padding-left: 30px;
+}
+main .contest-options .ui-replace input[type="radio"] {
+  display: none;
+}
+main .contest-options .ui-replace a {
+  color: #aaa;
+}
+main .contest-options .ui-replace.selected {
+  background-image: url(../i/icon-radio-selected.png);
+  color: #686868;
+}
+main .contest-options .ui-replace.selected a {
+  color: #686868;
+}
+main .contest-options .radial-progress {
+  border-radius: 50%;
+  height: 84px;
+  position: relative;
+  width: 84px;
+}
+main .contest-options .radial-progress span {
+  color: #54657e;
+  display: block;
+  font-size: 30px;
+  height: 84px;
+  left: 0;
+  line-height: 84px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 84px;
+}
+main .contest-timeline {
+  background: #30353a;
+  color: #fff;
+  height: auto;
+}
+main .contest-timeline h6 {
+  font-size: 16px;
+  margin-top: 5px;
+}
+main .contest-timeline .icon {
+  display: inline-block;
+  height: 50px;
+}
+main .contest-timeline .col-md-2 {
+  position: relative;
+}
+main .contest-timeline .col-item {
+  border-bottom: 1px solid #51555b;
+  height: 140px;
+  padding-top: 15px;
+  width: 100%;
+}
+main .contest-timeline .col-item .big-text {
+  font-size: 450%;
+  line-height: 1em;
+}
+main .contest-timeline .challenge-status {
+  background: #1da7d2;
+  border-left: 0;
+  height: 154px;
+}
+main .contest-timeline .date {
+  background: url(../i/icon-contest-timeline.png) 43% 50% no-repeat;
+  border-left: 0;
+  padding-left: 47%;
+}
+main .contest-timeline .date h6 {
+  margin-bottom: 0;
+}
+main .contest-timeline .date p {
+  font-size: 21px;
+}
+main .contest-timeline .registrants .icon {
+  background: url(../i/icon-registrants.png) no-repeat;
+  width: 49px;
+}
+main .contest-timeline .submitters .icon {
+  background: url(../i/icon-submitters.png) no-repeat;
+  width: 35px;
+}
+main .contest-timeline .total-submissions .icon {
+  background: url(../i/icon-total-submissions.png) no-repeat;
+  width: 24px;
+}
+main .challenge-details {
+  background: #ededeb;
+  padding-bottom: 100px;
+  padding-top: 40px;
+}
+main .challenge-details .challenge-participants {
+  border-bottom: 4px solid #e6e6e4;
+  border-top: 4px solid #e6e6e4;
+  overflow: auto;
+}
+main .challenge-details .challenge-participants th {
+  background: #fff;
+  border: none;
+  color: #474747;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: normal;
+}
+
+
+main .challenge-details .challenge-participants th .glyphicon {
+  color: #6a6a6a;
+  font-size: 12px;
+  display: none;
+}
+main .challenge-details .challenge-participants th .glyphicon.glyphicon-triangle-bottom {
+  color: #eee;
+  display: inline;
+}
+main .challenge-details .challenge-participants th.headerSortDown .glyphicon-triangle-bottom {
+  color: #6a6a6a;
+  display: inline;
+}
+main .challenge-details .challenge-participants th.headerSortDown .glyphicon-triangle-top {
+  display: none;
+}
+main .challenge-details .challenge-participants th.headerSortUp .glyphicon-triangle-bottom {
+  display: none;
+}
+main .challenge-details .challenge-participants th.headerSortUp .glyphicon-triangle-top {
+  color: #6a6a6a;
+  display: inline;
+}
+main .challenge-details .challenge-participants td {
+  border: none;
+  color: #6a6a6a;
+  height: 85px;
+  position: relative;
+  vertical-align: middle;
+}
+main .challenge-details .challenge-participants td img.avatar {
+  left: 10px;
+  margin-right: 6px;
+  position: absolute;
+  top: 15px;
+}
+main .challenge-details .challenge-participants td img.flag {
+  height: auto;
+  margin-left: 10%;
+  margin-right: 10px;
+  width: 18px;
+}
+main .challenge-details .challenge-participants td:first-child {
+  padding-left: 75px;
+}
+main .challenge-details .avatar {
+  border-radius: 50%;
+  height: auto;
+  width: 55px;
+}
+main .challenge-activity {
+  background: #fff;
+  border-bottom: 4px solid #e6e6e4;
+  border-top: 4px solid #e6e6e4;
+}
+main .challenge-activity .nav-tabs li {
+  display: table-cell;
+  width: 1%;
+}
+main .challenge-activity .nav-tabs li a {
+  border: none;
+  border-radius: 0;
+  color: #009dce;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+}
+main .challenge-activity .nav-tabs li a::after {
+  color: #b1b1b1;
+  content: '|';
+  position: absolute;
+  right: 0;
+}
+main .challenge-activity .nav-tabs li a:hover {
+  background: none;
+  border: none;
+}
+main .challenge-activity .nav-tabs li.active a {
+  border: none;
+  border-radius: 0;
+  color: #474747;
+}
+main .challenge-activity .nav-tabs li.active a:focus {
+  border: none;
+}
+main .challenge-activity .nav-tabs li.active a:hover {
+  border: none;
+}
+main .challenge-activity .nav-tabs li:last-child a::after {
+  content: '';
+}
+main .challenge-activity table td {
+  border: none;
+  height: 85px;
+  position: relative;
+  vertical-align: middle;
+}
+main .challenge-activity table td .posts-date {
+  color: #919191;
+  position: absolute;
+  right: 10px;
+  top: 9px;
+}
+main .country-graph {
+  margin-bottom: 90px;
+}
+/* Classes ----------------------------------------------------------------- */
+.icon {
+  background: url(../i/sprite.png) no-repeat;
+  background-size: 500px 500px;
+  display: inline-block;
+}
+.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.form-control-static {
+  font-size: 22px;
+  font-weight: 300;
+}
+.table {
+  margin-bottom: 0;
+  overflow-y:scroll;
+  display:block;
+  height: 450px;
+}
+.table.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f7f7f7;
+}
+.table.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #fff;
+}
+.tooltip-map-count {
+  background: #20a9d5;
+  color: #fff;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  height: 34px;
+  line-height: 34px;
+  padding: 0 10px;
+  position: relative;
+}
+.tooltip-map-count:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid #20a9d5;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+.tooltip-map-country {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  height: 34px;
+  line-height: 34px;
+  padding: 0 10px;
+}
+.img-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Handle */
+.handle.red {
+  color: #e00;
+}
+.handle.yellow {
+  color: #dc0;
+}
+.handle.purple {
+  color: #66f;
+}
+.handle.green {
+  color: #00a900;
+}
+.handle.gray {
+  color: #999;
+}
+/* Date Picker */
+.daterangepicker td {
+  border-top: 1px solid #e6e6e6 !important;
+  color: #333;
+  font-size: 11px;
+  height: 30px;
+}
+.daterangepicker td.in-range {
+  background: #fff;
+}
+.daterangepicker td:hover {
+  border-radius: 50%;
+}
+.daterangepicker td.active,
+.daterangepicker td.start-date.end-date {
+  background: #1da7d2;
+  border-radius: 50%;
+}
+.daterangepicker td.weekend {
+  color: #e0483e;
+}
+.daterangepicker .daterangepicker_input {
+  display: none;
+}
+.daterangepicker .calendar-table {
+  border: none;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  header nav {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    width: auto;
+  }
+  .contest-timeline .challenge-status {
+    left: 0;
+    position: absolute;
+    top: -7px;
+  }
+  .contest-timeline .col-item {
+    border-left: 1px solid #51555b;
+    border-bottom: none;
+  }
+  .contest-timeline .date {
+    background-position: 25px 50% !important;
+    padding-left: 64px !important;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

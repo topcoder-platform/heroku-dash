@@ -1,0 +1,357 @@
+<!doctype html Cache-Control:no-cache; >
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title id="brwsrTitle">Data Science Dashboard</title>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/daterangepicker.css" />
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+	<header>
+		<div class="container-fluid">
+			<h1>&nbsp</h1>
+			<h1 id="pageTitle"></h1>
+			<div class="row  ">
+				<!--
+				<div class="center"><img src="./i/header.png" alt="header image"/></div>
+			-->
+			</div>
+
+
+		<!--
+		<div class="row brands ">
+<div class="col-md-2 col-md-offset-3"><img src="./i/lish_logo2.png" class="img-responsive img-center" alt="" /></div>
+<div class="col-md-2 vertical-center"><img src="./i/Nasa_Tournament_Lab_Logo.png" class="img-responsive img-center" alt="" /></div>
+<div class="col-md-2"><a href="http://crowdsourcing.topcoder.com/" target="_blank"><img src="./i/tc-full-clipped.png" class="img-responsive img-center" alt="" /></a>
+
+			</div>
+		-->
+
+	</div>
+
+			<nav>
+				<ul>
+					<li><a href="./index.html" class="results active">Results</a></li>
+					<li><a href="./geography.html" class="geography">Geography</a></li>
+					<li><a href="https://www.topcoder.com/challenges/116fc3d9-a4e0-4a93-8ef1-a075ae16ee88" target="_blank" class="results">Details</a></li>
+
+				</ul>
+			</nav>
+
+
+		</div><!-- / .container-fluid -->
+	</header>
+	<!-- / header -->
+
+
+	<main>
+		<!--
+		<div class="filters">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-2">
+						<p class="form-control-static text-right">View:</p>
+					</div>
+					<div class="col-md-2">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+								<span id="score-text">Provisional Score</span>
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul id="option-score" class="dropdown-menu">
+								<li><a href="javascript:;" class="selected" data-value="provisional">Provisional Score</a></li>
+								<li><a href="javascript:;" data-value="final">Final Score</a></li>
+							</ul>
+						</div>
+					</div><!-- / by Data --
+					<div class="col-md-2">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+								By Country
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul id="option-country" class="dropdown-menu">
+								<li><a href="javascript:;" class="selected" data-value="All">All</a></li>
+								<li role="separator" class="divider"></li>
+							</ul>
+						</div>
+					</div><!-- / by Country --
+					<div class="col-md-2">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+								By Member
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul id="option-member" class="dropdown-menu">
+								<li><a href="javascript:;" class="selected" data-value="All">All</a></li>
+								<li role="separator" class="divider"></li>
+							</ul>
+						</div>
+					</div><!-- / by Member --
+					<div class="col-md-2">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+								By Member Rating
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul id="option-rating" class="dropdown-menu">
+								<li><a href="javascript:;" class="selected" data-value="All">All</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="javascript:;" class="handle red selected" data-value="red">Red (2200+)</a></li>
+								<li><a href="javascript:;" class="handle yellow selected" data-value="yellow">Yellow (1500 - 2199)</a></li>
+								<li><a href="javascript:;" class="handle purple selected" data-value="purple">Purple (1200 - 1499)</a></li>
+								<li><a href="javascript:;" class="handle green selected" data-value="green">Green (900 - 1199)</a></li>
+								<li><a href="javascript:;" class="handle gray selected" data-value="gray">Gray (0 - 899)</a></li>
+							</ul>
+						</div>
+					</div><!-- / by Rating --
+					<div class="col-md-2">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+								Success Metrics
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul id="option-metrics" class="dropdown-menu">
+								<li><a href="#" class="success selected" data-value="success">Success Metric</a></li>
+								<li><a href="#" class="baseline selected" data-value="baseline">Baseline Metric</a></li>
+
+							</ul>
+						</div>
+					</div><!-- / Success Metrics -->
+				</div><!-- / .row --
+			</div><!-- / .container-fluid --
+		</div>
+		<!-- / .filters -->
+
+
+		<div class="graph">
+			<div class="container-fluid">
+
+				<div id="the-graph"></div>
+
+			</div><!-- / .container-fluid -->
+		</div>
+		<!-- / .graph -->
+<!--
+		<div class="contest-options">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-2">
+						<p class="form-control-static">View:</p>
+					</div>
+					<div class="col-md-2">
+						<label class="radio ui-replace selected">
+							<input type="radio" name="contest_time" value="TOTAL DURATION" checked="checked">
+							TOTAL DURATION
+						</label>
+						<label class="radio ui-replace">
+							<input type="radio" name="contest_time" value="LAST 48 HR">
+							LAST 48 HR
+						</label>
+					</div>
+					<div class="col-md-2">
+						<label class="radio ui-replace">
+							<input type="radio" name="contest_time" value="LAST 24 HR">
+							LAST 24 HR
+						</label>
+						<label class="radio ui-replace">
+							<input type="radio" name="contest_time" value="RANGE">
+							RANGE |
+							<a href="javascript:;" class="daterange">
+								<span class="date-value">10/21 to 10/23</span>
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</a>
+						</label>
+					</div>
+					<div class="col-md-2">
+					<!--
+						<p class="form-control-static">Delta Improvement:</p>
+						<span
+						class="text-muted">FOR SELECTED TIME</span>
+					</div>
+					<div class="col-md-2">
+						<div class="radial-progress" data-value="0" id="radial-delta-improvement"><span>0%</span></div>
+					</div>
+
+				</div>
+
+			</div><!-- / .container-fluid
+		</div>
+		<!-- / .contest-options -->
+
+
+		<div class="contest-timeline">
+			<div class="row no-gutter">
+				<div class="col-md-2">
+					<div class="challenge-status col-item text-center">
+						<h6>CHALLENGE STATUS</h6>
+						<div class="big-text" id="status-challenge-end">0</div>
+						<p>Left in the competition</p>
+
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="date col-item">
+						<h6>Start Date:</h6>
+						<p id="status-challenge-startdate">3/11/2016</p>
+
+						<h6>End Date:</h6>
+						<p id="status-challenge-enddate">7/19/2016</p>
+					</div>
+				</div>
+				<!--
+				<div class="col-md-2">
+					<div class="delta-improvement col-item text-center">
+						<h6>DELTA IMPROVEMENT</h6>
+						<div class="big-text" id="status-challenge-improvement"></div>
+					</div>
+				</div>
+-->
+				<div class="col-md-2">
+					<div class="registrants col-item text-center">
+						<h6>REGISTRANTS</h6>
+						<div class="big-text">
+							<span id="status-challenge-registrants"></span>
+							<span class="icon"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="submitters col-item text-center">
+						<h6>SUBMITTERS</h6>
+						<div class="big-text">
+							<span id="status-challenge-submitters"></span>
+							<span class="icon"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="total-submissions col-item text-center">
+						<h6>TOTAL SUBMISSIONS</h6>
+						<div class="big-text">
+							<span id="status-challenge-submissions"></span>
+							<span class="icon"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- / .contest-timeline -->
+
+
+		<div class="challenge-details">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8">
+
+						<h3>Challenge Participants (<span id="challenge-participants-num"></span>)</h3>
+						<div class="challenge-participants">
+							<table id="challenge-participants-table" class="table table-striped table-responsive">
+								<thead>
+									<tr>
+										<th>
+											Name, Date
+											<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+										</th>
+										<th class="text-center">
+											Rating
+											<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+										</th>
+										<th class="text-center">
+											Country
+											<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+										</th>
+										<th class="text-center">
+											Submission #
+											<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+										</th>
+										<th class="text-center">
+											Language
+											<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+										</th>
+										<th class="text-center">
+											Points
+											<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+											<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+						</div><!-- / .challenge-participants -->
+					</div>
+					<div class="col-md-4">
+						<h3>Challenge Activity</h3>
+						<div class="challenge-activity">
+
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs nav-justified" role="tablist">
+								<!--
+								<li role="presentation" class=""><a href="#tab-posts" aria-controls="tab-posts" role="tab" data-toggle="tab">POSTS (<span id="posts-num"></span>)</a></li>
+							-->
+								<li role="presentation" class="active"><a href="#tab-submissions" aria-controls="tab-submissions" role="tab" data-toggle="tab">SUBMISSIONS (<span id="submissions-num"></span>)</a></li>
+								<li role="presentation" class=""><a href="#tab-alerts" aria-controls="tab-alerts" role="tab" data-toggle="tab">ALERTS (<span id="alerts-num"></span>)</a></li>
+							</ul>
+
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<!--
+								<div role="tabpanel" class="tab-pane" id="tab-posts">
+									<table id="posts-table" class="table table-striped table-responsive">
+										<tbody>
+
+										</tbody>
+									</table>
+								</div>
+							-->
+								<div role="tabpanel" class="tab-pane active" id="tab-submissions">
+									<table id="submissions-table" class="table table-striped table-responsive">
+										<tbody>
+
+										</tbody>
+									</table>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="tab-alerts">
+									<table id="alerts-table" class="table table-striped table-responsive">
+										<tbody>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- / .container-fluid -->
+		</div>
+		<!-- / .challenge-details -->
+
+	</main>
+	<!-- / main -->
+
+
+	<!-- JS Files -->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/circle-progress.js"></script>
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/daterangepicker.js"></script>
+	<script src="./js/highcharts.js"></script>
+	<script src="./js/jquery.tablesorter.min.js"></script>
+	<script src="./js/script.js"></script>
+</body>
+</html>
