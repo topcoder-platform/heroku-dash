@@ -365,7 +365,7 @@ jQuery(document).ready(function ($) {
               width: 3,
               value: success_metric,
               label: {
-                text: '<span style="color:#7bbc50;">Award</span>',
+                text: '<span style="color:#7bbc50;"></span>',
                 verticalAlign: "bottom",
               },
               zIndex: 2,
