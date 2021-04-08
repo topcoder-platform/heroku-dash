@@ -8,7 +8,7 @@
 
 /*** submissions ****/
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/challenge-submissions.mess";
+@export set filename="/Users/mess/dev/spacesuit-dash/data/challenge-submissions.mess";
 
 
 select
@@ -51,7 +51,7 @@ where p.project_id = 30171936 and handle not in ("lazybaer", "MarathonTester1", 
 
 
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/geo-data.mess" CsvColumnDelimiter=",";
+@export set filename="/Users/mess/dev/spacesuit-dash/data/geo-data.mess" CsvColumnDelimiter=",";
 
 select "{""country"":""" || NVL(country_name,"No Country Specified")
    || """,""code"":"""||  nvl(lower(iso_alpha2_code),"none") || """,""submissions"":",  count(u.upload_Id) , "},"
@@ -69,7 +69,7 @@ group by 1;
 
 /**** participants ****/
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/challenge-participants.mess" CsvColumnDelimiter=",";
+@export set filename="/Users/mess/dev/spacesuit-dash/data/challenge-participants.mess" CsvColumnDelimiter=",";
 select  "{""user"":{""rating"":"""|| NVL(rating, "")
  || """,""handle"":""" ||  handle
 || """,""country"":""" || NVL(country_name,"No Country Specified")
@@ -106,7 +106,7 @@ where p.project_id = 30171936 and handle not in ("lazybaer", "MarathonTester1", 
 /*** graph data ***/
 
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/graph-data.csv" CsvColumnDelimiter=",";
+@export set filename="/Users/mess/dev/spacesuit-dash/data/graph-data.csv" CsvColumnDelimiter=",";
 
 
  select   rating,handle,nvl(country_name,"No Country Specified"), NVL(path.path||file_name, "") avatar,
@@ -132,7 +132,7 @@ order by handle;
 /**** challenge status ***/
 
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/challenge-status.csv" CsvColumnDelimiter=",";
+@export set filename="/Users/mess/dev/spacesuit-dash/data/challenge-status.csv" CsvColumnDelimiter=",";
 select  count(unique coder.coder_id), count(s.submission_id),0
 from tcs_catalog:project p
   inner join tcs_catalog:resource r on r.project_id = p.project_id and resource_Role_id = 1
@@ -167,7 +167,7 @@ where p.project_id = 30171936;
 
 /**** PARTICIPANTS ****/
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/challenge-participants.csv" CsvColumnDelimiter=",";
+@export set filename="/Users/mess/dev/spacesuit-dash/data/challenge-participants.csv" CsvColumnDelimiter=",";
 select   NVL(rating, "") rating,
   handle,
   --address email,
