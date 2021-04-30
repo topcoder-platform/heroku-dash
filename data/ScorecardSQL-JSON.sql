@@ -125,7 +125,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ("lazybaer", "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = 30171936 and handle not in ("lazybaer", "MarathonTester1", "MarathonTester2", "MarathonTester3") 
 order by handle;
 @export off;
 
