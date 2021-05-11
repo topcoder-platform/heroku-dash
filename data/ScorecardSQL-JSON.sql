@@ -37,7 +37,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ("lazybaer", "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = 30171936  ;
 
 
 
@@ -97,7 +97,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ("lazybaer", "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = 30171936  ;
 
 
 
@@ -125,7 +125,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ("lazybaer", "MarathonTester1", "MarathonTester2", "MarathonTester3") 
+where p.project_id = 30171936  
 order by handle;
 @export off;
 
@@ -133,7 +133,7 @@ order by handle;
 
 @export on;
 @export set filename="/Users/mess/dev/spacesuit-dash/data/challenge-status.csv" CsvColumnDelimiter=",";
-select  count(unique coder.coder_id), count(s.submission_id),0
+select  count(unique r.user_id), count(s.submission_id),0
 from tcs_catalog:project p
   inner join tcs_catalog:resource r on r.project_id = p.project_id and resource_Role_id = 1
   inner join tcs_catalog:upload upload on upload.project_id = p.project_id and upload.resource_id = r.resource_id and upload.upload_status_id = 1
@@ -192,6 +192,6 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ("lazybaer", "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = 30171936  ;
 
 @export off;
