@@ -1,3 +1,7 @@
+sed -i '.bak' 's/30153848/30171936/g' *.sql
+sed -i '.bak' 's/REPLACEME/""$1""/g' ../*.html
+
+
 heroku open
   ../../../../../Applications/DbVisualizer.app/Contents/Resources/app/dbviscmd.sh -connection Prod -catalog InformixOLTP -sqlfile ScorecardSQL-JSON.sql
 #clean ukp submissions
