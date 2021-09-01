@@ -1,6 +1,6 @@
 sed -i '.bak' 's/REPLACEME/'"$1"'/g' *.sql
 sed -i '.bak' 's/REPLACEME/'"$1"'/g' ../*.html
-sed -i '.bak' 's/PATHREPLACE/'"$pwd"'/g' *.sql
+sed -i '.bak' 's?PATHREPLACE?'"${PWD}"'?g' *.sql 
 
 
 heroku open

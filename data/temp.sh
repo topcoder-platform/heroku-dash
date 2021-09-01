@@ -1,2 +1,4 @@
-echo $1
-sed -i '.bak' 's/REPLACEME/'"$1"'/g' ../*.html
+#sed -i '.bak' 's/PATHREPLACE/'"${PWD}"'/g' *.sql 
+sed -i '.bak' 's?PATHREPLACE?'"${PWD}"'?g' *.sql 
+
+echo ${PWD}
