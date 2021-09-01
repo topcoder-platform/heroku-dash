@@ -3,12 +3,12 @@
  inner join tcs_catalog:upload u on u.project_id = p.project_id  and upload_status_id = 1
         and upload_Type_id = 1
          inner join tcs_catalog:submission s on s.upload_id =u.upload_id --and initial_score>0
- where   p.project_id = 30171936
+ where   p.project_id = REPLACEME
 */
 
 /*** submissions ****/
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/challenge-submissions.mess";
+@export set filename="PATHREPLACE/challenge-submissions.mess";
 
 
 select
@@ -37,7 +37,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = REPLACEME and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
 
 
 
@@ -51,7 +51,7 @@ where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTe
 
 
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/geo-data.mess" CsvColumnDelimiter=",";
+@export set filename="PATHREPLACE/geo-data.mess" CsvColumnDelimiter=",";
 
 select "{""country"":""" || NVL(country_name,"No Country Specified")
    || """,""code"":"""||  nvl(lower(iso_alpha2_code),"none") || """,""submissions"":",  count(u.upload_Id) , "},"
@@ -62,14 +62,14 @@ select "{""country"":""" || NVL(country_name,"No Country Specified")
   --inner join tcs_catalog:submission s on s.upload_id =u.upload_id and initial_score>0
   inner join coder on coder.coder_id = r.user_id
   left outer join country c on c.country_code = coder.comp_country_code
-where p.project_id = 30171936
+where p.project_id = REPLACEME
 group by 1;
 
 @export off;
 
 /**** participants ****/
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/challenge-participants.mess" CsvColumnDelimiter=",";
+@export set filename="PATHREPLACE/challenge-participants.mess" CsvColumnDelimiter=",";
 select  "{""user"":{""rating"":"""|| NVL(rating, "")
  || """,""handle"":""" ||  handle
 || """,""country"":""" || NVL(country_name,"No Country Specified")
@@ -97,7 +97,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = REPLACEME and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
 
 
 
@@ -106,7 +106,7 @@ where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTe
 /*** graph data ***/
 
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/graph-data.csv" CsvColumnDelimiter=",";
+@export set filename="PATHREPLACE/graph-data.csv" CsvColumnDelimiter=",";
 
 
  select   rating,handle,nvl(country_name,"No Country Specified"), NVL(path.path||file_name, "") avatar,
@@ -125,14 +125,14 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = REPLACEME and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
 order by handle;
 @export off;
 
 /**** challenge status ***/
 
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/challenge-status.csv" CsvColumnDelimiter=",";
+@export set filename="PATHREPLACE/challenge-status.csv" CsvColumnDelimiter=",";
 select  count(unique coder.coder_id), count(s.submission_id),0
 from tcs_catalog:project p
   inner join tcs_catalog:resource r on r.project_id = p.project_id and resource_Role_id = 1
@@ -146,7 +146,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936
+where p.project_id = REPLACEME
 Union
 select  0,0,count(coder.coder_id)
 from tcs_catalog:project p
@@ -158,7 +158,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936;
+where p.project_id = REPLACEME;
 
 
 @export off;
@@ -167,7 +167,7 @@ where p.project_id = 30171936;
 
 /**** PARTICIPANTS ****/
 @export on;
-@export set filename="/Users/mess/dev/pancreatic-dash/data/challenge-participants.csv" CsvColumnDelimiter=",";
+@export set filename="PATHREPLACE/challenge-participants.csv" CsvColumnDelimiter=",";
 select   NVL(rating, "") rating,
   handle,
   --address email,
@@ -192,6 +192,6 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = REPLACEME and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
 
 @export off;
