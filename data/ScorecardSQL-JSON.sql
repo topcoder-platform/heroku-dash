@@ -3,7 +3,7 @@
  inner join tcs_catalog:upload u on u.project_id = p.project_id  and upload_status_id = 1
         and upload_Type_id = 1
          inner join tcs_catalog:submission s on s.upload_id =u.upload_id --and initial_score>0
- where   p.project_id = REPLACEME
+ where   p.project_id = 30171936
 */
 
 /*** submissions ****/
@@ -37,7 +37,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = REPLACEME and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
 
 
 
@@ -62,7 +62,7 @@ select "{""country"":""" || NVL(country_name,"No Country Specified")
   --inner join tcs_catalog:submission s on s.upload_id =u.upload_id and initial_score>0
   inner join coder on coder.coder_id = r.user_id
   left outer join country c on c.country_code = coder.comp_country_code
-where p.project_id = REPLACEME
+where p.project_id = 30171936
 group by 1;
 
 @export off;
@@ -97,7 +97,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = REPLACEME and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
 
 
 
@@ -125,7 +125,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = REPLACEME and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
 order by handle;
 @export off;
 
@@ -146,7 +146,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = REPLACEME
+where p.project_id = 30171936
 Union
 select  0,0,count(coder.coder_id)
 from tcs_catalog:project p
@@ -158,7 +158,7 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = REPLACEME;
+where p.project_id = 30171936;
 
 
 @export off;
@@ -192,6 +192,6 @@ left outer join coder_image_xref cix on cix.coder_id = u.user_id and display_fla
 left outer join image i on cix.image_id = i.image_id and image_type_id = 1
 left outer join path path on path.path_id = i.path_id
 left outer join algo_rating ar  on ar.coder_id = u.user_id and algo_rating_Type_id = 3
-where p.project_id = REPLACEME and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
+where p.project_id = 30171936 and handle not in ( "MarathonTester1", "MarathonTester2", "MarathonTester3") ;
 
 @export off;
